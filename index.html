@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Mi Princesa 💕</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: fadeIn 1.5s ease;
+    max-width: 350px;
+}
+
+h1 {
+    color: #ff4d6d;
+}
+
+img {
+    width: 100%;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yesBtn {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#yesBtn:hover {
+    transform: scale(1.1);
+}
+
+#noBtn {
+    background-color: #ccc;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>💖 Para mi princesa 💖</h1>
+    <p>Este 14 de febrero quiero invitarte a una noche especial solo tú y yo.</p>
+
+    <img src="foto.jpg" alt="Nuestra foto">
+
+    <p>¿Aceptas ser mi San Valentín?</p>
+
+    <button id="yesBtn" onclick="enviarWhatsApp()">Sí 💘</button>
+    <button id="noBtn" onmouseover="mover()">No 😅</button>
+</div>
+
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4c4b4e9c7a.mp3?filename=romantic-piano-110624.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function enviarWhatsApp(){
+    var numero = "573108744362";
+    var mensaje = "Si aceptaste manda este mensaje poputa";
+    var url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
+    window.open(url, "_blank");
+}
+
+function mover(){
+    const btn = document.getElementById("noBtn");
+    btn.style.position = "absolute";
+    btn.style.top = Math.random() * 80 + "%";
+    btn.style.left = Math.random() * 80 + "%";
+}
+</script>
+
+</body>
+</html>
